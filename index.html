@@ -57,7 +57,7 @@
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <H1><br><br><br><br><br>MoonBlast<br><br>$MNBT
+                <H1>MoonBlast<br><br>$MNBT
                   <a></a>
                   <h2><br><span class="checkmark">
                     <div class="checkmark_stem"></div>
@@ -78,7 +78,18 @@
                 <span class="checkmark">
                   <div class="checkmark_stem"></div>
                   <div class="checkmark_kick"></div>
-                </span>Real world Utility
+                </span>Real world Utility<br><br>
+                <a>
+                <div id="countdown"> 
+                  <div class="about--banner">
+                    <a href="https://app.gitbook.com/s/tS9vruaxVPS8cn9rE9f4/moonblast-token-design/tokenomics">
+                <li style="color:#ca3e2c;font-size: 1.5em">Buy $MNBT [Presale]</li>
+                  <ul>
+               <li style="display: inline-block; font-size: 1.3em; list-style-type: none; padding: 1.9em; text-transform: uppercase; color:#ffffff;"><span style="display: block; font-size: 3.5rem;" id="days"></span>Days</li>
+               <li style="display: inline-block; font-size: 1.3em; list-style-type: none; padding: 1.8em; text-transform: uppercase; color:#ffffff"><span style="display: block; font-size: 3.5rem;" id="hours"></span>Hours</li>
+               <li style="display: inline-block; font-size: 1.3em; list-style-type: none; padding: 1.8em; text-transform: uppercase; color:#ffffff"><span style="display: block; font-size: 3.5rem;" id="minutes"></span>Minutes</li>
+               <li style="display: inline-block; font-size: 1.3em; list-style-type: none; padding: 1.8em; text-transform: uppercase; color:#ffffff"><span style="display: block; font-size: 3.5rem;" id="seconds"></span>Seconds</li>
+                  </ul>
                   </a>
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -88,9 +99,8 @@
                 </button>
                 <img src="assets/img/MoonBlast 5.png" alt="header">
               </div>
-              <br><br><br><br><br><br><br><br><br><br><br><br>
               <div class="header--logo">
-                <div class="elfsight-app-b72bb0a7-8e28-4ec8-b2ba-c62964615984"></div>     
+             </div>
                 <a>
                   <h1>
                   <h1>
@@ -291,6 +301,36 @@
 <script src="assets/js/functions-min.js"></script>
 <script src="https://cdn.logwork.com/widget/countdown.js"></script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+<script>
+  (function () {
+    const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+    year = day * 365
+  var now = new Date().getTime();
+    let countDown = new Date().getTime() + 69332 * 60000,	  
+    x = setInterval(function() {    
+    let now = new Date().getTime(),
+      distance = countDown - now;
+      document.getElementById("days").innerText = Math.floor((distance % (year)) / (day)),
+      document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+      document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+      document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+    if (distance < 0) {
+      countdown = document.getElementById("countdown"),
+      countdown.style.display = "block";
+      document.getElementById("days").innerText = "0";
+      document.getElementById("hours").innerText = "0";
+      document.getElementById("minutes").innerText = "0";
+      document.getElementById("seconds").innerText = "0";
+      clearInterval(x);
+    }
+  }, 0)
+  }());
+</script>
+
 
 </body>
 </html>
