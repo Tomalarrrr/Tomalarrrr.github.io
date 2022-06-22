@@ -48,8 +48,7 @@
             <li><span>Project Information</span></li>
             <li><span>Roadmap</span></li>
             <li><span>Buy your token tickets to space!</span></li>
-             <A href="https://linktr.ee/moonblast">
-              <ion-icon name="calculator-sharp"></ion-icon>
+            <li><ion-icon name="calculator-sharp"></ion-icon></li>
              </a>
           </ul>
         </nav>
@@ -289,24 +288,59 @@
             </div>
             <li class="l-section section">
               <div class="hire">
-                </A>
-                <h2>Our DApp Calculator will be arriving shortly, watch this space!<br><br>🚀<br><br></h2>
-                <A href=https://linktr.ee/moonblast>
-                 <h2><ion-icon name="calculator-sharp"></ion-icon><h2>
+                <a style="color: #ffffff !important;">            
+                   <div class="intro--banner">
+                    <br><br><br><br><br><br><br><br><br><br>
+                    <H1><br>MoonBlast<br><br>$MNBT<br>
+                      <a></a><br>
+                    </H1>
+                   </div>
+                  <div class="input-box">
+                      <label for="MNBTAmount" class="form-label" style="font-size:2vh;">MoonBlast Amount</h4></label>
+                      <input type="text" class="form-control" id="balanceOf" style="background-color: #ffffff; float: right;
+                      border-color: #ca3e2c;color: #000000;box-shadow: 0px -1px 7px 3px #ca3e2c; font-size:2vh;">
+                  </div>
+                  <br>
+                  <div class="input-box">
+                      <label for="MNBTAPY" class="form-label" style="font-size:2vh;">Daily APY (%)</h4></label>
+                      <input type="text" class="form-control" id="yearlyROI" value="1" style="background-color: #ffffff; float: right;
+                      border-color: #ca3e2c;color: #000000;box-shadow: 0px -1px 7px 3px #ca3e2c; font-size:2vh;">
+                  </div>
+                  <br>
+                  <div class="input-box">
+                      <label for="MNBTPrice" class="form-label" style="font-size:2vh;">MoonBlast Token Price £</h4></label>
+                      <input type="text" class="form-control" id="price" style="background-color: #ffffff; float: right;
+                      border-color: #ca3e2c;color: #000000;box-shadow: 0px -1px 7px 3px #ca3e2c; font-size:2vh;">
+                  </div>
+                  <br><br><br>
+                  <label for="customRange" style="font-size:2vh;">Days (<span id="rangeVal">365</span>)</label>
+                  <input type="range" class="custom-range" id="customRange" name="points1" min="1" max="1095" value="365" oninput="showdays()" style="float: right" font-size:2.5vmin;">
+                   <br><br><br><br><br>
+                      <div style="width: 100%;clear: both">
+                          <h4 style="font-size:2vh; float: left;overflow: hidden">Future MNBT Amount</h4>
+                          <h4 style="font-size:2vh; float: right"><span id="lbalanceM"></span> $MNBT</h4>
+                      </div>
+                      <div style="width: 100%;clear: both">
+                          <h4 style="font-size:2vh; float: left">Future Return value</h4>
+                          <h4 style="font-size:2vh; float: right">$ <span id="tbalanceM"></span></h4>
+                      </div>
+                      <br>
+                      <b> <a style="color: #ff0000">Due to recent instances of exploits & an overall heightened risk to your wallet, we purposefully haven't provided the ability to connect to your wallet with this calculator. While we recognise that the MoonBlast calculator involves manual input, it is the safest method for estimating returns.</a> </b>
+                      <br><br><br><br><br><br><br><br><br><br><br>
                 </a>
+              </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
   <ul class="outer-nav">
-    <li class="is-active">Welcome Page</li>
+    <li class="is-active">Welcome Pagee</li>
     <li>The Team</li>
     <li>Project Information</li>
     <li>Roadmap</li>
     <li>Buy your token tickets to space!</li>
-    <A href=https://linktr.ee/moonblast>
-      <ion-icon name="calculator-sharp"></ion-icon>
+    <li><ion-icon name="calculator-sharp"></ion-icon></li>
     </a>
   </ul>
 </div>
@@ -319,6 +353,8 @@
 <script src="assets/js/functions-min.js"></script>
 <script src="https://cdn.logwork.com/widget/countdown.js"></script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/numbro@2.3.6/dist/numbro.min.js"></script>
 
 <script>
   (function () {
@@ -348,6 +384,48 @@
   }, 0)
   }());
 </script>
+
+<script>
+  var price=0; var dailyROI=1; var yearlyROI=1;
+  let balanceOf=0;
+  
+ function calc(){
+    var dInput = $('#balanceOf').val();
+    console.log(dInput);
+    var Input = $('#price').val();
+    console.log(Input);
+    
+    if(dInput > 0){
+            $('#wealth').text(numbro(dInput*price).format({thousandSeparated: true}));
+    }
+        else $('#wealth').text(0);
+        
+    let days = $('#customRange').val();
+    let APYY = $('#yearlyROI').val();
+         
+      $('#lbalanceM').text(numbro(((dInput)*((1+(APYY/100))**days))).format({mantissa: 1, thousandSeparated: true}));
+    $('#tbalanceM').text(numbro(((dInput*Input)*((1+(APYY/100))**days))).format({mantissa: 1, thousandSeparated: true}));
+
+ }
+
+ function setprice(){
+   $('#price').val(price);
+ }
+
+ function setyearlyROI(){
+    $('#yearlyROI').val(yearlyROI);
+ }
+
+ function setbalance(){
+    $('#balanceOf').val(balanceOf); calc();
+ }
+
+ function showdays(){
+    $('#rangeVal').text($('#customRange').val());
+    calc();
+ }
+</script> 
+
 
 
 </body>
