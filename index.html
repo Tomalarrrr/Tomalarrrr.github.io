@@ -17,7 +17,6 @@
 </head>
 <body>
 
-<!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
   <a class="device-notification--logo" href="#0">
     <img src="assets/img/MoonBlast Logo Small.png" alt="Global">
@@ -37,7 +36,7 @@
           </a>
            <A href="https://linktr.ee/moonblast">
            <button class="header--cta cta">Presale 2nd August!</button>
-           <a></a>
+           </a>
           <div class="header--nav-toggle">
             <span></span>
           </div>
@@ -127,8 +126,8 @@
                       <div class="slider--item-image">
                         <img src="assets/img/Screenshot 2022-06-07 at 11.03.53.png" alt="Victory">
                       </div>
-                      <p class="slider--item-title">AD<br>MoonBlast Crew Commander</p>
-                      <p class="slider--item-description" style="color:#ffffff;font-size:1.75vh">Ad's duty is to develop the project's community groups.  We can safely say that Ad has the experience we require because of his considerable experience working with large communities in the past.</p>
+                      <p class="slider--item-title">Adam<br>MoonBlast Crew Commander</p>
+                      <p class="slider--item-description" style="color:#ffffff;font-size:1.75vh">Adam's (Ad) duty is to develop the project's community groups.  We can safely say that Ad has the experience we require because of his considerable experience working with large communities in the past.</p>
                     </a>
                   </li>
                   <li class="slider--item slider--item-center">
@@ -239,10 +238,9 @@
                       Smart Contract - Testnet<BR><BR>
                       Deploy Mainnet Contract<BR><BR>
                       Article Publications<BR><BR>
-                      Build DApp Dashboard<BR><BR>
                       KYC & Audit Appoval<BR><BR>
                       Host Presale (Pinksale)<BR><BR>
-                    <h3><b>Find Our Complete Roadmap Through The Icon Below:</b></h3><BR>
+                    <h3><b>Use The Icon Below To Access Our Complete Roadmap:</b></h3><BR>
                       <A class="Social-icon" href="https://moonblast.gitbook.io/">
                         <ion-icon name="document-outline"></ion-icon>
                         <br><br><br><br><br><br><BR><BR><BR><BR>
@@ -280,14 +278,10 @@
                         <A class="Social-icon" href="https://moonblast.gitbook.io/">
                           <ion-icon name="document-outline"></ion-icon>
                         </A>
-                        <A class="Social-icon" href="https://www.bogged.finance/">
-                          <ion-icon name="planet-sharp"></ion-icon>
-                        </A>
                         <A class="Social-icon" href="https://dexscreener.com/bsc">
                           <ion-icon name="bar-chart-outline"></ion-icon>
                           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </A>
-                        <br><br><br><br><br><br>
                      </label>
                   </span>
                 </div>
@@ -437,7 +431,7 @@
 
 <style>
 img:hover {
-  animation: shake 0.5s;
+  animation: shake 1s;
   animation-iteration-count: infinite;
 }
 
@@ -456,27 +450,32 @@ img:hover {
 }
 </style>
 
-<style>
-  text:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-  </style>
-
+<script>
+  $("#dc_notification_custom_1").bar({
+      color            : '#333',
+      background_color : '#fffeec',
+      position         : 'top',
+      removebutton     : false,
+      message          : '20% off everything sale!   <font size="1">(Auto close in 4 secs)</font>',
+      time             : 4000
+  });
+       
+  $("#dc_notification_custom_2").bar({
+      color            : '#333',
+      background_color : '#ccdeeb',
+      position         : 'bottom',
+      removebutton     : false,
+      message          : 'Subscribe to our newsletter <u>today!</u>   <font size="1">(Click to close)</font>',
+      time                : 60000
+  });
+       
+       
+  $("#dc_notification_custom_3").bar({
+      message          : 'Our store will be closed during Christmas holidays.',
+      removebutton     : true 
+  });
+   
+</script>
 
 </body>
 </html>
