@@ -439,3 +439,7 @@ ion-icon {
   background-color: #495ef4;
   color: white;
 }
+
+.animate__animated.animate__backInDown{
+  --animate-duration: 2s;
+}
