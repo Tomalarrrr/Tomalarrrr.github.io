@@ -3,6 +3,11 @@
  *
  * Copyright (c) 2016 Jorik Tangelder;
  * Licensed under the MIT license */
+
+
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
+
 (function(window, document, exportName, undefined) {
   'use strict';
 
