@@ -1,5 +1,9 @@
 // @codekit-prepend "/vendor/hammer-2.0.8.js";
 
+
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
+
 $( document ).ready(function() {
 
   document.addEventListener('touchstart', function(){}, {passive: false})
